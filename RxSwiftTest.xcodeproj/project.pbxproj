@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		465DEB00D06B0C9D48588F01 /* Pods_RxSwiftTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8994820BCF8D3C82AC4A810 /* Pods_RxSwiftTest.framework */; };
 		E1306F6D1E800BAE001D1615 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1306F6C1E800BAE001D1615 /* Observable.swift */; };
-		E1306F6F1E801414001D1615 /* ReachabilyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1306F6E1E801414001D1615 /* ReachabilyService.swift */; };
 		E18962011E79442D009CB6A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18962001E79442D009CB6A5 /* AppDelegate.swift */; };
 		E18962031E79442D009CB6A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18962021E79442D009CB6A5 /* ViewController.swift */; };
 		E18962061E79442D009CB6A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18962041E79442D009CB6A5 /* Main.storyboard */; };
 		E18962081E79442D009CB6A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E18962071E79442D009CB6A5 /* Assets.xcassets */; };
 		E189620B1E79442D009CB6A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18962091E79442D009CB6A5 /* LaunchScreen.storyboard */; };
+		E1CB6D941E80FC6300566EFA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CB6D931E80FC6300566EFA /* Reachability.swift */; };
+		E1CB6D961E80FEA000566EFA /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CB6D951E80FEA000566EFA /* ReachabilityService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +23,6 @@
 		8E5B33F66142D186DE7E13C5 /* Pods-RxSwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftTest/Pods-RxSwiftTest.release.xcconfig"; sourceTree = "<group>"; };
 		A8994820BCF8D3C82AC4A810 /* Pods_RxSwiftTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1306F6C1E800BAE001D1615 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		E1306F6E1E801414001D1615 /* ReachabilyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilyService.swift; sourceTree = "<group>"; };
 		E1306F701E8014B3001D1615 /* RxSwiftTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RxSwiftTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		E18961FD1E79442D009CB6A5 /* RxSwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18962001E79442D009CB6A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +31,8 @@
 		E18962071E79442D009CB6A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E189620A1E79442D009CB6A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E189620C1E79442D009CB6A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1CB6D931E80FC6300566EFA /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		E1CB6D951E80FEA000566EFA /* ReachabilityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +87,9 @@
 			children = (
 				E18962001E79442D009CB6A5 /* AppDelegate.swift */,
 				E18962021E79442D009CB6A5 /* ViewController.swift */,
-				E1306F6E1E801414001D1615 /* ReachabilyService.swift */,
 				E1306F6C1E800BAE001D1615 /* Observable.swift */,
+				E1CB6D931E80FC6300566EFA /* Reachability.swift */,
+				E1CB6D951E80FEA000566EFA /* ReachabilityService.swift */,
 				E18962041E79442D009CB6A5 /* Main.storyboard */,
 				E18962071E79442D009CB6A5 /* Assets.xcassets */,
 				E18962091E79442D009CB6A5 /* LaunchScreen.storyboard */,
@@ -221,10 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CB6D961E80FEA000566EFA /* ReachabilityService.swift in Sources */,
 				E1306F6D1E800BAE001D1615 /* Observable.swift in Sources */,
 				E18962031E79442D009CB6A5 /* ViewController.swift in Sources */,
+				E1CB6D941E80FC6300566EFA /* Reachability.swift in Sources */,
 				E18962011E79442D009CB6A5 /* AppDelegate.swift in Sources */,
-				E1306F6F1E801414001D1615 /* ReachabilyService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

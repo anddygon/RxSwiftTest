@@ -9,5 +9,6 @@ target 'RxSwiftTest' do
   pod 'RxSwift'
   pod 'RxCocoa' 
   pod 'RxOptional'
+  pod 'SVProgressHUD'
 
 end
