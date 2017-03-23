@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		465DEB00D06B0C9D48588F01 /* Pods_RxSwiftTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8994820BCF8D3C82AC4A810 /* Pods_RxSwiftTest.framework */; };
 		E1306F6D1E800BAE001D1615 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1306F6C1E800BAE001D1615 /* Observable.swift */; };
+		E15064C01E83E0AE00A8A6F6 /* MyAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15064BF1E83E0AE00A8A6F6 /* MyAlert.swift */; };
 		E18962011E79442D009CB6A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18962001E79442D009CB6A5 /* AppDelegate.swift */; };
 		E18962031E79442D009CB6A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18962021E79442D009CB6A5 /* ViewController.swift */; };
 		E18962061E79442D009CB6A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18962041E79442D009CB6A5 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		A8994820BCF8D3C82AC4A810 /* Pods_RxSwiftTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1306F6C1E800BAE001D1615 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		E1306F701E8014B3001D1615 /* RxSwiftTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RxSwiftTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		E15064BF1E83E0AE00A8A6F6 /* MyAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAlert.swift; sourceTree = "<group>"; };
 		E18961FD1E79442D009CB6A5 /* RxSwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18962001E79442D009CB6A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E18962021E79442D009CB6A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				E18962001E79442D009CB6A5 /* AppDelegate.swift */,
 				E18962021E79442D009CB6A5 /* ViewController.swift */,
+				E15064BF1E83E0AE00A8A6F6 /* MyAlert.swift */,
 				E1306F6C1E800BAE001D1615 /* Observable.swift */,
 				E1CB6D931E80FC6300566EFA /* Reachability.swift */,
 				E1CB6D951E80FEA000566EFA /* ReachabilityService.swift */,
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15064C01E83E0AE00A8A6F6 /* MyAlert.swift in Sources */,
 				E1CB6D961E80FEA000566EFA /* ReachabilityService.swift in Sources */,
 				E1306F6D1E800BAE001D1615 /* Observable.swift in Sources */,
 				E18962031E79442D009CB6A5 /* ViewController.swift in Sources */,

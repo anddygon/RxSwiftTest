@@ -75,16 +75,22 @@ class DefaultReachabilityService: ReachabilityService {
 }
 
 extension ObservableConvertibleType {
-    func retryOnBecomesReachable(_ valueOnFailure:E, reachabilityService: ReachabilityService) -> Observable<E> {
+    func retryOnBecomesReachable(reachabilityService: ReachabilityService) -> Observable<E> {
         return self.asObservable()
             .catchError { (e) -> Observable<E> in
                 reachabilityService.reachability
                     .skip(1)
                     .filter { $0.reachable }
-                    .flatMap { _ in
-                        Observable.error(e)
-                    }
-                    .startWith(valueOnFailure)
+                    .flatMap({ (_) -> Observable<E> in
+                        print("发起重试")
+                        return Observable.error(e)
+                    })
+                    
+//                    .flatMap { _ in
+//                        print("print("发起重试")")
+//                        return Observable.error(e)
+//                    }
+//                    .startWith(valueOnFailure)
             }
             .retry()
     }

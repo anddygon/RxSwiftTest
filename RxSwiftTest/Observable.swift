@@ -23,7 +23,6 @@ extension ObservableConvertibleType {
                     let alertVC = UIAlertController(title: "遇到错误，是否重试？", message: e.localizedDescription, preferredStyle: .alert)
                     let confirmAction = UIAlertAction(title: "确定", style: .default, handler: { (_) in
                         observer.onError(e)
-                        observer.onCompleted()
                     })
                     let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: { (_) in
                         observer.onCompleted()
@@ -50,6 +49,37 @@ extension ObservableConvertibleType {
                 handler?(e)
                 return Observable.empty()
         }
+    }
+    
+    func retryAskUserByAlert(title: String = "Encountered error") -> Observable<E> {
+        return self
+            .asObservable()
+            .catchError { (e: Error) -> Observable<E> in
+                /*以当用户确认重试的时候 发送error，然后触发真正的retry工作
+                 我们这里提供的只是一个用户接口来让用户做选择
+                 **/
+                return Observable<E>.create({ (observer) -> Disposable in
+                    let alertVC = UIAlertController(title: title, message: e.localizedDescription, preferredStyle: .alert)
+                    let confirmAction = UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+                        observer.onError(e)
+                        observer.onCompleted()
+                    })
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+                        observer.onCompleted()
+                    })
+                    
+                    alertVC.addAction(confirmAction)
+                    alertVC.addAction(cancelAction)
+                    
+                    UIApplication.shared.keyWindow?.rootViewController?.present(alertVC, animated: true, completion: nil)
+                    
+                    return Disposables.create {
+                        alertVC.dismiss(animated: true, completion: nil)
+                    }
+                })
+            }
+            .debug("retryAskUserByAlert")
+            .retry()
     }
     
 }

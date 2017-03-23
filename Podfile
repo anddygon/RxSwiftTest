@@ -6,6 +6,7 @@ target 'RxSwiftTest' do
   use_frameworks!
 
   # Pods for RxSwiftTest
+  pod 'ObjectMapper'
   pod 'RxSwift'
   pod 'RxCocoa' 
   pod 'RxOptional'
