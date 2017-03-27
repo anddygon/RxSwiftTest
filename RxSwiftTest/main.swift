@@ -9,11 +9,6 @@
 import Foundation
 import UIKit
 
-private func appDelegateClassName() -> String {
-    _ = UIApplication.shared.rx
-    return NSStringFromClass(AppDelegate.self)
-}
-
 UIApplicationMain(
     CommandLine.argc,
     UnsafeMutableRawPointer(CommandLine.unsafeArgv).bindMemory(
@@ -21,5 +16,5 @@ UIApplicationMain(
         capacity: Int(CommandLine.argc)
     ),
     NSStringFromClass(UIApplication.self),
-    appDelegateClassName()
+    NSStringFromClass(AppDelegate.self)
 )

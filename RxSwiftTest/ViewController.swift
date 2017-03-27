@@ -29,27 +29,6 @@ class ViewController: UIViewController {
             }
             .disposed(by: bag)
         
-//        UIApplication.shared.rx
-//            .state
-//            .bindNext { (state: UIApplicationState) in
-//                switch state {
-//                case .active:
-//                    print("active")
-//                case .background:
-//                    print("background")
-//                case .inactive:
-//                    print("inactive")
-//                }
-//            }
-//            .disposed(by: bag)
-//        
-//        UIApplication.shared.rx
-//            .willTerminate
-//            .bindNext { (_) in
-//                print("willTerminate")
-//            }
-//            .addDisposableTo(bag)
-        
         let touched = rx.methodInvoked(#selector(ViewController.touchesBegan(_:with:)))
         
         touched
