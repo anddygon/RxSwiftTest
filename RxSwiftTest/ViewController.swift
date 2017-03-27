@@ -29,14 +29,51 @@ class ViewController: UIViewController {
             }
             .disposed(by: bag)
         
-        UIApplication.shared.rx
-            .willResignActive
-            .bindNext {
-                print("rx will resign active")
+//        UIApplication.shared.rx
+//            .state
+//            .bindNext { (state: UIApplicationState) in
+//                switch state {
+//                case .active:
+//                    print("active")
+//                case .background:
+//                    print("background")
+//                case .inactive:
+//                    print("inactive")
+//                }
+//            }
+//            .disposed(by: bag)
+//        
+//        UIApplication.shared.rx
+//            .willTerminate
+//            .bindNext { (_) in
+//                print("willTerminate")
+//            }
+//            .addDisposableTo(bag)
+        
+        let touched = rx.methodInvoked(#selector(ViewController.touchesBegan(_:with:)))
+        
+        touched
+            .flatMapLatest{ _ in
+                UIApplication.shared.rx
+                    .isFirstLaunch
+            }
+            .bindNext { (isFirstLaunch: Bool) in
+                print("\(isFirstLaunch ? "是" : "不是")首次加载")
             }
             .disposed(by: bag)
+        
+        touched
+            .flatMapLatest{ _ in
+                UIApplication.shared.rx
+                    .isFirstLaunchOfNewVersion
+            }
+            .bindNext { (isFirstLaunch: Bool) in
+                print("\(isFirstLaunch ? "是" : "不是")首次加载新版本")
+            }
+            .disposed(by: bag)
+        
     }
-
+    
 }
 
 extension ViewController: MyViewDelegate {
