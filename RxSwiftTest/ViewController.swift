@@ -19,13 +19,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let v = MyView.loadFromNib()
-        v.delegate = self
         view.addSubview(v)
+        v.delegate = self
         
         v.rx
             .buttonClicked
             .bindNext {
                 print("rx 代理模式")
+            }
+            .disposed(by: bag)
+        
+        UIApplication.shared.rx
+            .willResignActive
+            .bindNext {
+                print("rx will resign active")
             }
             .disposed(by: bag)
     }

@@ -17,6 +17,8 @@
 		E1D9CD661E87EE5800884C53 /* MyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1D9CD651E87EE5800884C53 /* MyView.xib */; };
 		E1D9CD681E87F1EF00884C53 /* RxMyViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D9CD671E87F1EF00884C53 /* RxMyViewDelegateProxy.swift */; };
 		E1D9CD6A1E87FB3600884C53 /* MyView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D9CD691E87FB3600884C53 /* MyView+Rx.swift */; };
+		E1D9CD6F1E87FE1E00884C53 /* RxUIApplicationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D9CD6E1E87FE1E00884C53 /* RxUIApplicationDelegateProxy.swift */; };
+		E1D9CD711E88BF6A00884C53 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D9CD701E88BF6A00884C53 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		E1D9CD651E87EE5800884C53 /* MyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyView.xib; sourceTree = "<group>"; };
 		E1D9CD671E87F1EF00884C53 /* RxMyViewDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMyViewDelegateProxy.swift; sourceTree = "<group>"; };
 		E1D9CD691E87FB3600884C53 /* MyView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyView+Rx.swift"; sourceTree = "<group>"; };
+		E1D9CD6E1E87FE1E00884C53 /* RxUIApplicationDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxUIApplicationDelegateProxy.swift; sourceTree = "<group>"; };
+		E1D9CD701E88BF6A00884C53 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,18 +90,44 @@
 		E18961FF1E79442D009CB6A5 /* RxSwiftTest */ = {
 			isa = PBXGroup;
 			children = (
+				E1D9CD701E88BF6A00884C53 /* main.swift */,
 				E18962001E79442D009CB6A5 /* AppDelegate.swift */,
 				E18962021E79442D009CB6A5 /* ViewController.swift */,
-				E1D9CD671E87F1EF00884C53 /* RxMyViewDelegateProxy.swift */,
-				E1D9CD691E87FB3600884C53 /* MyView+Rx.swift */,
-				E1D9CD631E87EE0800884C53 /* MyView.swift */,
-				E1D9CD651E87EE5800884C53 /* MyView.xib */,
+				E1D9CD6D1E87FDFF00884C53 /* ApplicationDelegateProxy */,
+				E1D9CD6B1E87FDBD00884C53 /* MyView */,
+				E1D9CD6C1E87FDCD00884C53 /* MyViewDelegateProxy */,
 				E18962041E79442D009CB6A5 /* Main.storyboard */,
 				E18962071E79442D009CB6A5 /* Assets.xcassets */,
 				E18962091E79442D009CB6A5 /* LaunchScreen.storyboard */,
 				E189620C1E79442D009CB6A5 /* Info.plist */,
 			);
 			path = RxSwiftTest;
+			sourceTree = "<group>";
+		};
+		E1D9CD6B1E87FDBD00884C53 /* MyView */ = {
+			isa = PBXGroup;
+			children = (
+				E1D9CD631E87EE0800884C53 /* MyView.swift */,
+				E1D9CD651E87EE5800884C53 /* MyView.xib */,
+			);
+			name = MyView;
+			sourceTree = "<group>";
+		};
+		E1D9CD6C1E87FDCD00884C53 /* MyViewDelegateProxy */ = {
+			isa = PBXGroup;
+			children = (
+				E1D9CD671E87F1EF00884C53 /* RxMyViewDelegateProxy.swift */,
+				E1D9CD691E87FB3600884C53 /* MyView+Rx.swift */,
+			);
+			name = MyViewDelegateProxy;
+			sourceTree = "<group>";
+		};
+		E1D9CD6D1E87FDFF00884C53 /* ApplicationDelegateProxy */ = {
+			isa = PBXGroup;
+			children = (
+				E1D9CD6E1E87FE1E00884C53 /* RxUIApplicationDelegateProxy.swift */,
+			);
+			name = ApplicationDelegateProxy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,8 +257,10 @@
 			files = (
 				E1D9CD641E87EE0800884C53 /* MyView.swift in Sources */,
 				E18962031E79442D009CB6A5 /* ViewController.swift in Sources */,
+				E1D9CD6F1E87FE1E00884C53 /* RxUIApplicationDelegateProxy.swift in Sources */,
 				E1D9CD6A1E87FB3600884C53 /* MyView+Rx.swift in Sources */,
 				E1D9CD681E87F1EF00884C53 /* RxMyViewDelegateProxy.swift in Sources */,
+				E1D9CD711E88BF6A00884C53 /* main.swift in Sources */,
 				E18962011E79442D009CB6A5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
