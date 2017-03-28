@@ -33,16 +33,27 @@ class ViewController: UIViewController {
 //            }
 //            .addDisposableTo(bag)
         
+//        field.rx.text
+//            .asObservable()
+//            .throttle(1, latest: false, scheduler: MainScheduler.instance)
+//            .scan(initialState) { (sum: State, text: String?) -> State in
+//                return (sum.index + 1, text)
+//            }
+//            .bindNext { (s: State) in
+//                print("第\(s.index)次 \(s.text)")
+//            }
+//            .addDisposableTo(bag)
+        
+        // debounce 0.5是说 两个相邻元素发射时间必须大于0.5，所以在这里表现就是如果是连续输入相邻元素输入间隔小于等于0.5，那么不会发送next时间，一直到有停顿大于0.5
+        // 也就是每发射一个元素开始计时计时到了0.5还没有发送下一个元素，那么会触发next事件
         field.rx.text
             .asObservable()
-            .throttle(1, latest: false, scheduler: MainScheduler.instance)
-            .scan(initialState) { (sum: State, text: String?) -> State in
-                return (sum.index + 1, text)
+            .debounce(0.5, scheduler: MainScheduler.instance)
+            .bindNext { (str: String?) in
+                print("str \(str)")
             }
-            .bindNext { (s: State) in
-                print("第\(s.index)次 \(s.text)")
-            }
-            .addDisposableTo(bag)
+            .disposed(by: bag)
+        
     }
 
 }
