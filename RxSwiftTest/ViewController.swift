@@ -12,7 +12,6 @@ import RxCocoa
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var pickerView: UIPickerView!
     let bag = DisposeBag()
 
     override func viewDidLoad() {
